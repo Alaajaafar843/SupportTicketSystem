@@ -11,6 +11,7 @@ namespace SupportTicket.Models
         public string Email { get; set; } = string.Empty;
         public string FirstName { get; set; } = string.Empty;
         public string FamilyName { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
         public string LoginToken { get; set; } = string.Empty;
         public DateTime? LastLoginDate { get; set; }
         public string UserType { get; set; } = string.Empty;

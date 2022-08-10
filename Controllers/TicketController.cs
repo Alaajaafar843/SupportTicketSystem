@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SupportTicket.Models;
 using dotnet;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SupportTicket.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class TicketController : ControllerBase
@@ -107,7 +109,7 @@ namespace SupportTicket.Controllers
         }
         // loading related data
         [HttpGet("Get SupplierFromProductName")]
-        public async Task<Ticket?> GetSupplierFromProductName(int UserId)
+        public async Task<Ticket> GetSupplierFromProductName(int UserId)
         {
             return await _context.Tickets
             .Include(p => p.User)
