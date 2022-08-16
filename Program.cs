@@ -16,6 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("Admin", policy => policy.RequireClaim("UserType" , "admin"));
+    options.AddPolicy("Client", policy => policy.RequireClaim("company"));
 });
 
 builder.Services.AddDbContext<MySQLDBContext>(
